@@ -1,23 +1,13 @@
 # API Documentation
 
-Добро пожаловать в документацию нашего API!
+Welcome to our API documentation!
 
-## Быстрый старт
+## Quick Start
 
-1. Получите API ключ
-2. Установите базовый URL: `https://boost.simplebot.cfd/api/`
-3. Начните делать запросы!
+1. Get your API key from the [bot](https://t.me/simplebooster_bot)
+2. Set the base URL: `{{{baseURL}}}`
 
-## Основные endpoints
+## Main Endpoints
 
-- **Аутентификация** - `/auth`
-- **Пользователи** - `/users`
-- **Продукты** - `/products`
-- **Заказы** - `/orders`
-
-## Пример запроса
-
-```bash
-curl -X GET "https://api.example.com/v1/users" \
-  -H "Authorization: Bearer YOUR_API_KEY"
-```
+- **User** - `[[user|/user]]`
+- **Orders** - `[[order|/order]]`

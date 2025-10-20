@@ -1,18 +1,100 @@
-# Создание заказа
+---
+endpoint: /order
+---
 
-**GET** `/order`
+# Order API
 
-Получает текущий баланс пользователя.
+## Create Order
 
-**Заголовки:**
+Create an order for processing.
 
+```http
+POST {{{endpoint}}}
 ```
+
+### Headers
+
+```http
+Authorization: YOUR_API_KEY
 Content-Type: application/json
 ```
 
-**Пример запроса:**
+### Request Body
 
-```bash
-curl -X GET "https://boost.simplebot.cfd/api/balance" \
-  -H "Content-Type: application/json"
+```json
+{
+	"inviteCode": "discord invite code",
+	"amount": "amount boost"
+}
+```
+
+### Response
+
+| Parameter  | Type   | Description                           |
+| ---------- | ------ | ------------------------------------- |
+| id         | string | Order UUID                            |
+| inviteCode | string | Server invite code                    |
+| amount     | number | Number of boosts                      |
+| price      | number | Price for boosts                      |
+| status     | enum   | [Current order status](/en/status.md) |
+| createdAt  | date   | Creation date                         |
+
+```json
+{
+	"status": true,
+	"data": {
+		"id": "UUID",
+		"inviteCode": "simpleNitro",
+		"amount": 10,
+		"price": 560,
+		"status": "PENDING",
+		"createdAt": "2025-10-20T00:00:00Z"
+	}
+}
+```
+
+## Get Order Information
+
+Retrieve information about an order.
+
+```http
+GET {{{endpoint}}}/:id
+```
+
+### Parameters
+
+| Parameter | Type   | Required | Description |
+| --------- | ------ | -------- | ----------- |
+| id        | string | Yes      | Order UUID  |
+
+### Headers
+
+```http
+Authorization: YOUR_API_KEY
+Content-Type: application/json
+```
+
+### Response
+
+| Parameter  | Type   | Description                           |
+| ---------- | ------ | ------------------------------------- |
+| id         | string | Order UUID                            |
+| inviteCode | string | Server invite code                    |
+| amount     | number | Number of boosts                      |
+| price      | number | Price for boosts                      |
+| status     | enum   | [Current order status](/en/status.md) |
+| createdAt  | date   | Creation date                         |
+
+```json
+{
+	"status": true,
+	"data": {
+		"id": "UUID",
+		"inviteCode": "simpleNitro",
+		"amount": 10,
+		"price": 560,
+		"status": "PENDING",
+		"createdAt": "2025-10-20T00:00:00Z"
+	}
+}
 ```

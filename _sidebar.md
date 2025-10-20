@@ -1,5 +1,5 @@
-- [Главная](README.md)
-- API Эндпоинты
-  - [Пользователь](user.md)
-  - [Создание заказа](order.md)
-- [Коды ошибок](errors.md)
+- [Home](/)
+- [API Reference](/)
+  - [User](/user.md)
+  - [Orders](/order.md)
+- [Error Codes](/errors.md)
