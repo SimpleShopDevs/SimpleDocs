@@ -1,0 +1,16 @@
+:root {
+	--docsifyselect-menu-background: var(--base-background-color);
+	--docsifyselect-menu-border-color: var(--theme-color);
+}
+
+.app-nav li > a > .emoji {
+	font-size: 9px;
+}
+
+.emoji {
+	font-size: 14px;
+}
+
+.app-nav > ul > li:hover ul {
+	padding-right: 25%;
+}
